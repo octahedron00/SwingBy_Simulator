@@ -11,9 +11,6 @@ time_tick = 10000
 go = True
 
 
-root = Tk()
-root.title("SwingBy Simulator")
-
 #################################################
 
 class Planet:
@@ -198,115 +195,115 @@ def stop():
 
 #################################################
 
-left_frame = Frame(root)
-left_frame.grid(row=0, column=0)
+if __name__ == '__main__':
+    root = Tk()
+    root.title("SwingBy Simulator")
 
-# 1st Layer
-frame_option = LabelFrame(left_frame, text="Settings")
-frame_option.pack(padx=5, pady=5, ipady=5)
+    left_frame = Frame(root)
+    left_frame.grid(row=0, column=0)
 
-# Weight Label
-lbl_weight = Label(frame_option, text="Planet", width=12)
-lbl_weight.pack(side="left", padx=5, pady=5)
+    # 1st Layer
+    frame_option = LabelFrame(left_frame, text="Settings")
+    frame_option.pack(padx=5, pady=5, ipady=5)
 
-# Weight Combobox
-opt_weight = ["Earth", "Mars", "Jupiter", "10x Jupiter", "HOLD"]
-cmb_weight = ttk.Combobox(frame_option, state="readonly", values=opt_weight, width=10)
-cmb_weight.current(0)
-cmb_weight.pack(side="left", padx=5, pady=5)
+    # Weight Label
+    lbl_weight = Label(frame_option, text="Planet", width=12)
+    lbl_weight.pack(side="left", padx=5, pady=5)
 
-# Speed Label
-lbl_speed = Label(frame_option, text="Speed(km/s)", width=12)
-lbl_speed.pack(side="left", padx=5, pady=5)
+    # Weight Combobox
+    opt_weight = ["Earth", "Mars", "Jupiter", "10x Jupiter", "HOLD"]
+    cmb_weight = ttk.Combobox(frame_option, state="readonly", values=opt_weight, width=10)
+    cmb_weight.current(0)
+    cmb_weight.pack(side="left", padx=5, pady=5)
 
-# Speed Entry
-ent_speed = Entry(frame_option, width=10)
-ent_speed.pack(side="left", padx=5, pady=5)
+    # Speed Label
+    lbl_speed = Label(frame_option, text="Speed(km/s)", width=12)
+    lbl_speed.pack(side="left", padx=5, pady=5)
 
-# Degree Label
-lbl_deg = Label(frame_option, text="Degree", width=12)
-lbl_deg.pack(side="left", padx=5, pady=5)
+    # Speed Entry
+    ent_speed = Entry(frame_option, width=10)
+    ent_speed.pack(side="left", padx=5, pady=5)
 
-# Degree Entry
-ent_deg = Entry(frame_option, width=10)
-ent_deg.pack(side="left", padx=5, pady=5)
+    # Degree Label
+    lbl_deg = Label(frame_option, text="Degree", width=12)
+    lbl_deg.pack(side="left", padx=5, pady=5)
 
-# 2nd Layer
-frame_option2 = LabelFrame(left_frame, text="Settings")
-frame_option2.pack(padx=5, pady=5, ipady=5)
+    # Degree Entry
+    ent_deg = Entry(frame_option, width=10)
+    ent_deg.pack(side="left", padx=5, pady=5)
 
-# Vector degree Label
-lbl_vec = Label(frame_option2, text="Degree", width=12)
-lbl_vec.pack(side="left", padx=5, pady=5)
+    # 2nd Layer
+    frame_option2 = LabelFrame(left_frame, text="Settings")
+    frame_option2.pack(padx=5, pady=5, ipady=5)
 
-# Vector degree Entry
-ent_vec = Entry(frame_option2, width=10)
-ent_vec.pack(side="left", padx=5, pady=5)
+    # Vector degree Label
+    lbl_vec = Label(frame_option2, text="Degree", width=12)
+    lbl_vec.pack(side="left", padx=5, pady=5)
 
-# Tick Label
-lbl_tick = Label(frame_option2, text="Time Tick", width=12)
-lbl_tick.pack(side="left", padx=5, pady=5)
+    # Vector degree Entry
+    ent_vec = Entry(frame_option2, width=10)
+    ent_vec.pack(side="left", padx=5, pady=5)
 
-# Tick Combobox
-opt_tick = ["10s", "50s", "100s", "200s", "500s", "1000s", "5000s", "10000s"]
-cmb_tick = ttk.Combobox(frame_option2, state="readonly", values=opt_tick, width=10)
-cmb_tick.current(2)
-cmb_tick.pack(side="left", padx=5, pady=5)
+    # Tick Label
+    lbl_tick = Label(frame_option2, text="Time Tick", width=12)
+    lbl_tick.pack(side="left", padx=5, pady=5)
 
-# Time Label
-lbl_time = Label(frame_option2, text="0s(0d)", width=16)
-lbl_time.pack(side="left", padx=5, pady=5)
+    # Tick Combobox
+    opt_tick = ["10s", "50s", "100s", "200s", "500s", "1000s", "5000s", "10000s"]
+    cmb_tick = ttk.Combobox(frame_option2, state="readonly", values=opt_tick, width=10)
+    cmb_tick.current(2)
+    cmb_tick.pack(side="left", padx=5, pady=5)
 
-# Start Button
-btn_start = Button(frame_option2, padx=5, pady=5, text="Start", width=8, command=start)
-btn_start.pack(side="right", padx=5, pady=5)
+    # Time Label
+    lbl_time = Label(frame_option2, text="0s(0d)", width=16)
+    lbl_time.pack(side="left", padx=5, pady=5)
 
-# Stop Button
-btn_stop = Button(frame_option2, padx=5, pady=5, text="Stop", width=8, command=stop)
-btn_stop.pack(side="right", padx=5, pady=5)
-btn_stop.pack_forget()
+    # Start Button
+    btn_start = Button(frame_option2, padx=5, pady=5, text="Start", width=8, command=start)
+    btn_start.pack(side="right", padx=5, pady=5)
 
-# Space Canvas
-canvas_space = Canvas(left_frame, height=h, width=w, bg='black')
-canvas_space.pack()
+    # Stop Button
+    btn_stop = Button(frame_option2, padx=5, pady=5, text="Stop", width=8, command=stop)
+    btn_stop.pack(side="right", padx=5, pady=5)
+    btn_stop.pack_forget()
 
-# Plot Canvas, Right side
-canvas_plot = Canvas(root, height=480, width=640, bg='white')
-canvas_plot.grid(row=0, column=1)
-root.update_idletasks()
+    # Space Canvas
+    canvas_space = Canvas(left_frame, height=h, width=w, bg='black')
+    canvas_space.pack()
 
-
-def lines():
-    # One line = 10%
-    canvas_plot.create_line(0, 170, 640, 170, fill='blue')
-    canvas_plot.create_line(0, 160, 640, 160, fill='blue')
-    canvas_plot.create_line(0, 150, 640, 150, fill='blue')
-    canvas_plot.create_line(0, 140, 640, 140, fill='blue')
-    canvas_plot.create_line(0, 130, 640, 130, fill='blue')
-    canvas_plot.create_line(0, 120, 640, 120, fill='black')
-    canvas_plot.create_line(0, 110, 640, 110, fill='red')
-    canvas_plot.create_line(0, 100, 640, 100, fill='red')
-    canvas_plot.create_line(0, 90, 640, 90, fill='red')
-    canvas_plot.create_line(0, 80, 640, 80, fill='red')
-    canvas_plot.create_line(0, 70, 640, 70, fill='red')
-
-    canvas_plot.create_line(0, 170+240, 640, 170+240, fill='blue')
-    canvas_plot.create_line(0, 160+240, 640, 160+240, fill='blue')
-    canvas_plot.create_line(0, 150+240, 640, 150+240, fill='blue')
-    canvas_plot.create_line(0, 140+240, 640, 140+240, fill='blue')
-    canvas_plot.create_line(0, 130+240, 640, 130+240, fill='blue')
-    canvas_plot.create_line(0, 120+240, 640, 120+240, fill='black')
-    canvas_plot.create_line(0, 110+240, 640, 110+240, fill='red')
-    canvas_plot.create_line(0, 100+240, 640, 100+240, fill='red')
-    canvas_plot.create_line(0, 90+240, 640, 90+240, fill='red')
-    canvas_plot.create_line(0, 80+240, 640, 80+240, fill='red')
-    canvas_plot.create_line(0, 70+240, 640, 70+240, fill='red')
+    # Plot Canvas, Right side
+    canvas_plot = Canvas(root, height=480, width=640, bg='white')
+    canvas_plot.grid(row=0, column=1)
+    root.update_idletasks()
 
 
-lines()
+    def lines():
+        # One line = 10%
+        canvas_plot.create_line(0, 170, 640, 170, fill='blue')
+        canvas_plot.create_line(0, 160, 640, 160, fill='blue')
+        canvas_plot.create_line(0, 150, 640, 150, fill='blue')
+        canvas_plot.create_line(0, 140, 640, 140, fill='blue')
+        canvas_plot.create_line(0, 130, 640, 130, fill='blue')
+        canvas_plot.create_line(0, 120, 640, 120, fill='black')
+        canvas_plot.create_line(0, 110, 640, 110, fill='red')
+        canvas_plot.create_line(0, 100, 640, 100, fill='red')
+        canvas_plot.create_line(0, 90, 640, 90, fill='red')
+        canvas_plot.create_line(0, 80, 640, 80, fill='red')
+        canvas_plot.create_line(0, 70, 640, 70, fill='red')
 
-#################################################
+        canvas_plot.create_line(0, 170 + 240, 640, 170 + 240, fill='blue')
+        canvas_plot.create_line(0, 160 + 240, 640, 160 + 240, fill='blue')
+        canvas_plot.create_line(0, 150 + 240, 640, 150 + 240, fill='blue')
+        canvas_plot.create_line(0, 140 + 240, 640, 140 + 240, fill='blue')
+        canvas_plot.create_line(0, 130 + 240, 640, 130 + 240, fill='blue')
+        canvas_plot.create_line(0, 120 + 240, 640, 120 + 240, fill='black')
+        canvas_plot.create_line(0, 110 + 240, 640, 110 + 240, fill='red')
+        canvas_plot.create_line(0, 100 + 240, 640, 100 + 240, fill='red')
+        canvas_plot.create_line(0, 90 + 240, 640, 90 + 240, fill='red')
+        canvas_plot.create_line(0, 80 + 240, 640, 80 + 240, fill='red')
+        canvas_plot.create_line(0, 70 + 240, 640, 70 + 240, fill='red')
 
+    lines()
 
-root.mainloop()
-sys.exit()
+    root.mainloop()
+    sys.exit()
